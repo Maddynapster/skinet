@@ -43,5 +43,9 @@ namespace infrastructure.Repository
              return SpecificationEvaluator<T>.getQuery(input ,spec );
         }
 
+        public async Task<int> Count(ISpecification<T> spec)
+        {
+            return await ApplySpecificatioin(spec).CountAsync(); 
+        }
     }
 }
